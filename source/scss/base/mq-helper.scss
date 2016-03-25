@@ -1,0 +1,26 @@
+/**
+ *  mq-helper.scss
+ *
+ *
+ */
+
+.mq-helper {
+  display: block;
+  width: $screen-xs;
+  height: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  @include breakpoint(min-width, $screen-sm) {
+    width: $screen-sm;
+  }
+  @include breakpoint(min-width, $screen-md) {
+    width: $screen-md;
+  }
+  @include breakpoint(min-width, $screen-lg) {
+    width: $screen-lg;
+  }
+  @include breakpoint(min-width, $screen-xl) {
+    width: $screen-xl;
+  }
+}

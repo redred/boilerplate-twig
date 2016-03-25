@@ -1,0 +1,136 @@
+/**
+ *  Overrides for Bootstrap
+ *
+ *  If this exceeds a certain amount of overrides,
+ *  consider replacing the entire Bootstrap module.
+ *
+ */
+
+.container {
+  @include container-fixed;
+
+  @media (min-width: $screen-sm-min) {
+    width: $container-sm;
+  }
+  @media (min-width: $screen-md-min) {
+    width: $container-md;
+  }
+  @media (min-width: $screen-lg-min) {
+    width: $container-lg;
+  }
+  @media (min-width: $screen-xl-min) {
+    width: $container-xl;
+  }
+}
+
+@mixin make-grid-xlcolumns($i: 1, $list: ".col-xl-#{$i}") {
+
+  @for $i from (1 + 1) through $grid-columns {
+    $list: "#{$list}, .col-xl-#{$i}";
+  }
+
+  #{$list} {
+    position: relative;
+    // Prevent columns from collapsing when empty
+    min-height: 1px;
+    // Inner gutter via padding
+    padding-left:  ($grid-gutter-width / 2);
+    padding-right: ($grid-gutter-width / 2);
+  }
+
+}
+
+@include make-grid-xlcolumns();
+@media (min-width: $screen-xl-min) {
+  @include make-grid(xl);
+}
+
+// Generate the large columns
+@mixin make-xl-column($columns, $gutter: $grid-gutter-width) {
+  position: relative;
+  min-height: 1px;
+  padding-left:  ($gutter / 2);
+  padding-right: ($gutter / 2);
+
+  @media (min-width: $screen-xl-min) {
+    float: left;
+    width: percentage(($columns / $grid-columns));
+  }
+}
+
+@mixin make-xl-column-offset($columns) {
+  @media (min-width: $screen-xl-min) {
+    margin-left: percentage(($columns / $grid-columns));
+  }
+}
+
+@mixin make-xl-column-push($columns) {
+  @media (min-width: $screen-xl-min) {
+    left: percentage(($columns / $grid-columns));
+  }
+}
+
+@mixin make-xl-column-pull($columns) {
+  @media (min-width: $screen-xl-min) {
+    right: percentage(($columns / $grid-columns));
+  }
+}
+
+// Visibility utilities
+.visible-xl {
+  @include responsive-invisibility('.visible-xl');
+}
+
+.visible-xl-block,
+.visible-xl-inline,
+.visible-xl-inline-block {
+  display: none !important;
+}
+
+.visible-lg {
+  @media (min-width: $screen-lg-min) and (max-width: $screen-lg-max){
+    @include responsive-visibility('.visible-lg');
+  }
+}
+.visible-lg-block {
+  @media (min-width: $screen-lg-min) and (max-width: $screen-lg-max){
+    display: block !important;
+  }
+}
+.visible-lg-inline {
+  @media (min-width: $screen-lg-min) and (max-width: $screen-lg-max){
+    display: inline !important;
+  }
+}
+.visible-lg-inline-block {
+  @media (min-width: $screen-lg-min) and (max-width: $screen-lg-max){
+    display: inline-block !important;
+  }
+}
+
+.visible-xl {
+  @media (min-width: $screen-xl-min) {
+    @include responsive-visibility('.visible-xl');
+  }
+}
+.visible-xl-block {
+  @media (min-width: $screen-xl-min) {
+    display: block !important;
+  }
+}
+.visible-xl-inline {
+  @media (min-width: $screen-xl-min) {
+    display: inline !important;
+  }
+}
+.visible-xl-inline-block {
+  @media (min-width: $screen-xl-min) {
+    display: inline-block !important;
+  }
+}
+
+.hidden-xl {
+  @media (min-width: $screen-xl-min) {
+    @include responsive-invisibility('.hidden-xl');
+  }
+}

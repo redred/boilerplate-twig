@@ -1,0 +1,18 @@
+@mixin breakpoint($param1, $param2) {
+  $statement: '#{$param1}:#{$param2}';
+  @media screen and ($statement) {
+    @content;
+  }
+}
+
+@mixin border-radius($val) {
+  @include border-top-radius($val);
+  @include border-right-radius($val);
+  @include border-bottom-radius($val);
+  @include border-left-radius($val);
+}
+
+@mixin sharpen-text {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

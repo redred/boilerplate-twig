@@ -1,0 +1,32 @@
+/**
+ *  site.scss 
+ *  
+ *  This is the main SCSS file that generates site.css and site.min.css
+ *  Note that Bootstrap is overridden here also.
+ *
+ */
+
+/* Global modules */
+@import '../../bower_modules/modular-scale/stylesheets/modular-scale';
+@import "base/bootstrap"; // Bootstrap override
+@import "base/variables-custom";
+@import "base/fonts";
+@import "base/icons";
+@import "base/mixins";
+@import "base/base";
+@import "base/color";
+@import "base/mq-helper";
+
+/* Bootstrap overrides */
+@import "bootstrap_overrides/grid";
+
+/* Global components */
+@import "modules/styleguide";
+@import "modules/site-header";
+@import "modules/site-footer";
+@import "modules/site-nav";
+
+/* Content components */
+
+/* Sidebar components */
+@import "modules/sidebar";

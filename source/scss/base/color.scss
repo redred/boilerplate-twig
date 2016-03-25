@@ -1,0 +1,13 @@
+/**
+ *  color.scss
+ *
+ *
+ */
+
+.color {
+  &-bg {
+    &-red {
+      background-color: $red;
+    }
+  }
+}

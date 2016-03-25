@@ -1,0 +1,29 @@
+/**
+ *  site-footer.scss
+ *
+ *
+ */
+
+.site-footer {
+  background-color: #eee;
+  color: #000;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  &__footer {
+  }
+  &__list {
+    list-style-type: none;
+    margin: 0;
+    padding: 1.0em 0;
+    float: left;
+    clear: both;
+    &-item {
+      margin: 0 1.0em 0 0;
+      padding: 0;
+      float: left;
+    }
+  }
+  &__copyright {
+    clear: both;
+  }
+}
