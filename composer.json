@@ -1,0 +1,15 @@
+{
+  "name": "boilerplate-twig",
+  "require": {
+    "twig/extensions": "^1.2"
+  },
+  "authors": [
+    {
+      "name": "Red",
+      "email": "red@red-deleon.com"
+    }
+  ],
+  "config": {
+    "vendor-dir": "composer_modules"
+  }
+}
